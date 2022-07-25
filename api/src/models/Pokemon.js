@@ -17,30 +17,30 @@ module.exports = (sequelize) => {
     hp:{
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     attack:{
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     defense:{
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     speed:{
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     height:{
       type: DataTypes.FLOAT,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     weight:{
       type: DataTypes.FLOAT,
-      defaultValue: "50",
+      defaultValue: 50,
     },
     img:{
       type: DataTypes.STRING,

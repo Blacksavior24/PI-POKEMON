@@ -37,7 +37,7 @@ const postCreate = async (req, res) => {
     const { name, hp, attack, defense, speed, height, weight, img, types } =
       req.body;
     try {
-      if (name) {
+      if(name) {
         const allPoke = await getAllPokemon();
         const isPoke = allPoke.find((e) => e.name === name.toLowerCase());
         if (!isPoke) {
