@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 import {
-    GET_POKEMONS
+    GET_POKEMONS,
+    GET_DETAILS
 } from './actionTypes';
 
 export const getpokemons = ()=>{
@@ -17,3 +18,13 @@ export const getpokemons = ()=>{
         }
     };
 }; 
+
+export const getDetail = (id)=>{
+    return async (dispatch)=>{
+        const pokedetail = (await axios(`http://localhost:3001/pokemons/${id}`)).data
+        return dispatch({
+            type: GET_DETAILS,
+            payload: pokedetail
+        });
+    };
+};
