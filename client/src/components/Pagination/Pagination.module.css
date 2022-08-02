@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.pagination{
+    width: 300px;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+
+}
+
+.btn{
+    padding: 12px 17px;
+    border-radius: 100%;
+    background-color: #e5e764;
+    font-weight: 700;
+    color: rgb(167, 34, 34);
+}
+
+.btn:hover {
+	display: flex;
+	transform: scale(1.2);
+    cursor: pointer;
+}

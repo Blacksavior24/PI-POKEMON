@@ -1,16 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector    } from 'react-redux'
-import { getpokemons} from '../../redux/actions';
+import { getPokemons, cleanPokemons} from '../../redux/actions';
 import Cards from "../Cards/Cards";
+import Nav from "../Nav/Nav";
+import Loading from "../Loading/Loading";
+import Filters from "../Filters/Filters";
+import style from './Home.module.css'
 
 const Home = ()=>{
     const dispatch = useDispatch();
     const allPokemons = useSelector((state)=>state.pokemons); //state - reducer
 
+    const [, setRefreshState] = useState(false);
+
     useEffect(()=>{
-        dispatch(getpokemons());
-        
-    }, []);
+        dispatch(getPokemons());
+        return ()=>{
+          dispatch(cleanPokemons(dispatch));
+        }
+    }, [dispatch]);
 
     const handleClick = (e) =>{
         e.preventDefault();
@@ -18,18 +26,19 @@ const Home = ()=>{
     };
 
     return (
-        <div >
-      
+      <div className={style.body}>
+        {allPokemons.length > 0 ? (
         <div>
-          <div>
-            <div>
-              <Cards
-                allPokemons={allPokemons}
-              />
-            </div>
-          </div>
-        </div>
-    </div>
+        <Nav handleClick={handleClick} />
+
+        <Filters setRefreshState={setRefreshState} />
+
+        <Cards allPokemons={allPokemons} />
+      </div>
+      ) : (
+        <Loading />
+      )}
+      </div>
   );
     
 }

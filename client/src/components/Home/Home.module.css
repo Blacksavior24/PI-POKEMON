@@ -1,0 +1,9 @@
+.body{
+    background-color: #fffec2;
+}
+.containterCards{
+    width: 100vh;
+}
+.containterCard{
+    display: flex;
+}
