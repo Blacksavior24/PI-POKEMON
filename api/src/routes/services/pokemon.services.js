@@ -3,9 +3,17 @@ const {Pokemon, Type} = require('../../db');
 
 const getAll = async (req, res) => {
     const { name } = req.query;
+    
+    //const pokeTotal = await getAllPokemon();
     try {
       if (name) {
+        /*
+        const pokeInfo = pokeTotal.filter((p) =>
+        p.name.toLowerCase().includes(name.toLowerCase())
+        );*/
+
         const pokeInfo = await getPokeName(name);
+        console.log(pokeInfo);
         pokeInfo.length
           ? res.status(200).send(pokeInfo)
           : res.status(404).send("error");

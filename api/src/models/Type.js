@@ -13,9 +13,11 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    infolink:{
-      type: DataTypes.STRING,
     }
-  });
+  },
+  {
+    createdAt: false,
+    updatedAt: false,
+  }
+  );
 };

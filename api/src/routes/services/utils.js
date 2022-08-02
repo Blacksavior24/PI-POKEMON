@@ -1,37 +1,45 @@
 const axios = require('axios');
 const {Pokemon, Type} = require('./../../db')
-const  api = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
 
 //pokemons api
 const getApiInfo = async() => {
-    try { 
-        const fetchapi = await axios(api);
-        const res = await fetchapi.data.results.map(async(e)=>{
-            const pokemon = await axios(e.url);
-            return{
-                id: pokemon.data.id,
-                name: pokemon.data.name,
-                img: pokemon.data.sprites.front_default,
-                types: pokemon.data.types.map((e)=>{
-                    return{
-                        name: e.type.name,            
-                        img: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
-                        link: `https://bulbapedia.bulbagarden.net/wiki/${e.type.name}_(type)`
-                    }
-                }),
-                hp: pokemon.data.stats[0].base_stat,
-                attack: pokemon.data.stats[1].base_stat,
-                defense: pokemon.data.stats[2].base_stat,
-                speed: pokemon.data.stats[5].base_stat,
-                height: pokemon.data.height,
-                weight: pokemon.data.weight
-            }
-        })   
-        const infoapi = await Promise.all(res);
-        return infoapi;
-    } catch (error) {
-        console.log(error);
+    let url = "https://pokeapi.co/api/v2/pokemon/";
+    let pokemons = [];
+    while (pokemons.length < 60) {//cantidad sin usar limit ahora de 20 en 20
+      let info = await axios.get(url);
+      let pokemonesApi = info.data;
+      let auxPokemones = pokemonesApi.results.map((e) => {
+        return {
+          name: e.name,
+          url: e.url,
+        };
+      });
+      pokemons.push(...auxPokemones);
+      url = pokemonesApi.next;
     }
+    let pokesPromise = pokemons.map(async (p) => {
+        let pokemon = await axios.get(p.url);
+        return {
+          id: pokemon.data.id,
+          name: pokemon.data.name,
+          img: pokemon.data.sprites.front_default,
+          types: pokemon.data.types.map((e) => {
+            return {
+              name: e.type.name,
+              img: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
+            };
+          }),
+          hp: pokemon.data.stats[0].base_stat,
+          attack: pokemon.data.stats[1].base_stat,
+          defense: pokemon.data.stats[2].base_stat,
+          speed: pokemon.data.stats[5].base_stat,
+          height: pokemon.data.height,
+          weight: pokemon.data.weight,
+        };
+      });
+      pokesWithData = await Promise.all(pokesPromise);
+      //console.log(pokesWithData);
+      return pokesWithData;
 }
 
 
@@ -39,7 +47,7 @@ const getApiInfo = async() => {
 const getDbInfo = async()=>{
     return await Pokemon.findAll({
         include:{
-            model: Type,
+            model: Type,    
             attributes: ["name"],
         },
     });
@@ -125,6 +133,27 @@ const getPokeName = async (name) => {
   
     return pokemonInfo;
 };
+/*
+const getDbName = async (name) => {
+    const pokemon = await getDbInfo();
+    const pokename = pokemon.filter((e)=>e.name = name);
+    console.log(pokename);
+    return pokename;
+}
+
+const getName = async (name) => {
+    const ApiName = await getPokeName(name);
+    const DbName = await getDbName(name);
+    if (DbName) {
+        console.log(DbName);
+        return DbName;
+    } else {
+        console.log(ApiName);
+        return ApiName;
+    }
+}
+*/
+
 
 module.exports = {
     getAllPokemon,

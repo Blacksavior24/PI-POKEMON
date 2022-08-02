@@ -7,7 +7,7 @@ const getTypes = async (req, res) => {
     let apiTypeInfo = apiType.data;
     let types = apiTypeInfo.results.map((e) => ({
       name: e.name,
-      img: `https://typedex.app/images/ui/types/dark/${e.name}.svg`,
+      img: `https://typedex.app/images/ui/types/dark/${e.name}.svg`,          
     }));
     types = types.filter((t) => t.name !== "shadow" && t.name !== "unknown");
     //console.log(types);
