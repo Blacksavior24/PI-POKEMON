@@ -29,7 +29,9 @@ const Home = ()=>{
       <div className={style.body}>
         {allPokemons.length > 0 ? (
         <div>
-        <Nav handleClick={handleClick} />
+          <div className={style.nav}>
+            <Nav handleClick={handleClick}/>
+          </div>
 
         <Filters setRefreshState={setRefreshState} />
 

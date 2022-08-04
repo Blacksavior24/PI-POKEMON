@@ -1,0 +1,120 @@
+.body {
+    background-color: #f5f5dc;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    height: 500px;
+    /* border: 2px solid black; */
+    margin: auto;
+    position: relative;
+    top: 60px;
+    background-color: #656558;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.containerImg {
+    width: 350px;
+    height: 350px;
+    /* border: 2px solid black; */
+    position: relative;
+    right: 60px;
+    /* top: 60px; */
+    background: #f5f5dc;
+    background-image: url('https://external-preview.redd.it/XfZ2BCWg9MHnXnCjXQtQtLGmq6KfcKYcuX3PpR3qHwc.jpg?auto=webp&s=a20131055a8a966bf7c9921a83e6ae4d72275115');
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.containerImg img:hover {
+    transform: scale(1.2);
+}
+
+.containerRight {
+    width: 600px;
+    height: 500px;
+}
+
+.containerName {
+    font-family: 'Paytone One', sans-serif;
+    color: #fffec2;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    height: 100px;
+    margin-top: -20px;
+}
+
+.containerName p {
+    font-family: 'Mitr', sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #fffec2;
+    position: relative;
+    bottom: 45px;
+}
+
+.containerInfo {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -20px;
+}
+
+.containerInfo h3 {
+    font-family: 'Mitr', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #252516;
+}
+
+.containerInfo p {
+    font-family: 'Paytone One', sans-serif;
+    color: #fffec2;
+    margin-top: -20px;
+    font-size: 25px;
+
+}
+
+.containerTypes {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Paytone One', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fffec2;
+}
+
+.containerTypes img {
+    margin-bottom: -20px;
+}
+
+.nav {
+    background-color: #5a5a4f;
+    height: 70px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navTitle {
+
+    font-family: 'Pokemon Solid Normal';
+    color: rgb(44, 166, 82);
+    font-size: 2.8rem;
+    position: relative;
+    top: 20px;
+
+}
+
+.navBtn {
+    background: transparent;
+    border: none;
+    font-family: 'Pokemon Solid Normal';
+    color: rgb(36, 163, 51);
+    font-size: 2.8rem;
+    position: relative;
+    cursor: pointer;
+}

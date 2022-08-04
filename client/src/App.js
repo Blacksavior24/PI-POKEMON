@@ -9,9 +9,6 @@ import CreatePoke from './components/CreatePoke/CreatePoke';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-      <h1>Henry Pokemon</h1>
-      </div>
       <Route exact path='/' component={LandingPage}/>
       <Route exact path='/home' component={Home} />
       <Route exact path='/create' component={CreatePoke} />

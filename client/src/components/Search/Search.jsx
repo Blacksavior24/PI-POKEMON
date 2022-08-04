@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPokemonByName, cleanPokemons } from "../../redux/actions";
 import {HiSearch} from 'react-icons/hi'
+import style from './Search.module.css'
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,6 @@ const Search = () => {
   const handleInputChange = (e) => {
     e.preventDefault();
     setName(e.target.value);
-    //console.log(name);
   };
 
   const handleSubmit = (e) => {
@@ -22,7 +22,6 @@ const Search = () => {
     } else {
       return alert("hola");
     }
-    // setName("");
   };
 
   return (
@@ -32,18 +31,22 @@ const Search = () => {
           handleSubmit(e);
         }}
       >
-        <input
+      <div className={style.div}>
+          
+      <input
+          className={style.input}
           type="text"
-          placeholder="Search"
+          placeholder="Search..."
           onChange={(e) => {
             handleInputChange(e);
           }}
           value={name}
         />
-        <button  type="submit">
-          <HiSearch /> Search {/* componenete que solo genera un icono ._. */} 
+        <button className={style.btn} type="submit">
+          <HiSearch size='42px'/> {/* componenete que solo genera un icono ._. */} 
           
         </button>
+        </div>
       </form>
     </div>
   );

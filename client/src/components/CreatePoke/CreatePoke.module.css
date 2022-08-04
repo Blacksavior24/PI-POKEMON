@@ -5,7 +5,7 @@
     height: 100vh;
 }
 .nav {
-    background-color: #ebec92;
+    background-color: #767661;
     height: 70px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
@@ -20,7 +20,7 @@
     height: 550px;
     position: relative;
     top: 30px;
-    background-color: #ebec92;
+    background-color: #f5f5cd;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
@@ -104,8 +104,7 @@
     -webkit-appearance: none;
     appearance: none;
     background-color: #fffec2;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-      linear-gradient(to bottom, #fffec2 0%,#f7f7f7 100%);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
@@ -137,8 +136,8 @@
       text-transform: uppercase;
       letter-spacing: 2.5px;
       font-weight: 500;
-      color: #000;
-      background-color: #f3f2cd;
+      color: #fff;
+      background-color: #35b243;
       border: none;
       border-radius: 45px;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -148,9 +147,8 @@
     }
 
     .btn:hover {
-      background-color: rgb(231, 68, 68);
-      box-shadow: 0px 15px 20px rgba(231, 68, 68, 0.5);
-      color: #fff;
+        opacity: 0.8;
+      color: #000;
       transform: translateY(-1px);
     }
 
@@ -190,13 +188,9 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Mitr&family=Paytone+One&display=swap');
-
-
 .containerImg{
- background-image: url('https://www.pkparaiso.com/imagenes/anime/033/002.jpg');
+ background-image: url('https://external-preview.redd.it/XfZ2BCWg9MHnXnCjXQtQtLGmq6KfcKYcuX3PpR3qHwc.jpg?auto=webp&s=a20131055a8a966bf7c9921a83e6ae4d72275115');
  height: 300px;
- background-position:bottom;
  background-size: cover;
  border-radius: 20px;
  border-bottom-right-radius: 0;
@@ -231,19 +225,17 @@
 
 .navTitle{
 
-        font-family: 'Pokemon Solid Normal';
-        color: rgb(231, 68, 68);
+        color: rgb(74, 160, 30);
         font-size: 2.8rem;
         position: relative;
-        top: -40px;
-
+        top: 10px;
+        cursor: pointer;
 }
 
 .navBtn{
     background: transparent;
     border: none;
-    font-family: 'Pokemon Solid Normal';
-    color: rgb(231, 68, 68);
+    color: rgb(50, 187, 95);
     font-size: 2.8rem;
     position: relative;
     cursor: pointer;

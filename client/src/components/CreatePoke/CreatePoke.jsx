@@ -1,9 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import typeImage from './../Filters/types';
 import { useDispatch, useSelector } from "react-redux";
 import { cleanPokemons, getAlltypes, postPokemon } from "../../redux/actions";
 import style from './CreatePoke.module.css'
+
+
+const normal = "https://typedex.app/images/ui/types/dark/normal.svg";
+const fighting = "https://typedex.app/images/ui/types/dark/fighting.svg";
+const flying = "https://typedex.app/images/ui/types/dark/flying.svg";
+const poison = "https://typedex.app/images/ui/types/dark/poison.svg";
+const ground = "https://typedex.app/images/ui/types/dark/ground.svg";
+const rock = "https://typedex.app/images/ui/types/dark/rock.svg";
+const bug = "https://typedex.app/images/ui/types/dark/bug.svg";
+const ghost = "https://typedex.app/images/ui/types/dark/ghost.svg";
+const steel = "https://typedex.app/images/ui/types/dark/steel.svg";
+const fire = "https://typedex.app/images/ui/types/dark/fire.svg";
+const water = "https://typedex.app/images/ui/types/dark/water.svg";
+const grass = "https://typedex.app/images/ui/types/dark/grass.svg";
+const electric = "https://typedex.app/images/ui/types/dark/electric.svg";
+const psychic = "https://typedex.app/images/ui/types/dark/psychic.svg";
+const ice = "https://typedex.app/images/ui/types/dark/ice.svg";
+const dragon = "https://typedex.app/images/ui/types/dark/dragon.svg";
+const dark = "https://typedex.app/images/ui/types/dark/dark.svg";
+const fairy = "https://typedex.app/images/ui/types/dark/fairy.svg";
+
+const typeImage = {
+  bug,
+  dark,
+  dragon,
+  electric,
+  fairy,
+  fighting,
+  fire,
+  flying,
+  ghost,
+  grass,
+  ground,
+  ice,
+  normal,
+  poison,
+  psychic,
+  rock,
+  steel,
+  water,
+};
 
 
 const validateName = /^[a-z]+$/i;
@@ -16,6 +56,16 @@ const validate = (input) => {
       errors.name = "Name required.";
     } else if (!validateNum.test(input.hp) || parseInt(input.hp) < 1) {
       errors.hp = "Number required. Higher than one";
+    } else if (!validateNum.test(input.attack) || parseInt(input.attack) < 1) {
+      errors.attack = "Number required. Higher than one";
+    } else if (!validateNum.test(input.defense) || parseInt(input.defense) < 1) {
+      errors.defense = "Number required. Higher than one";
+    } else if (!validateNum.test(input.speed) || parseInt(input.speed) < 1) {
+      errors.speed = "Number required. Higher than one";
+    } else if (!validateNum.test(input.weight) || parseInt(input.weight) < 1) {
+      errors.weight = "Number required. Higher than one";
+    } else if (!validateNum.test(input.height) || parseInt(input.height) < 1) {
+      errors.height = "Number required. Higher than one";
     } else if (!validateUrl.test(input.img)) {
       errors.img = "URL required";
     }
@@ -93,7 +143,6 @@ const CreatePoke = ()=>{
     const handleSelect = (e)=>{
         if(input.types.includes(e.target.value)){
             alert('Other type or create');
-            e.target.value = 'Select other type'
         }else{
             if(input.types.length < 2){
                 setInput({
@@ -167,7 +216,7 @@ const CreatePoke = ()=>{
                 }}
             >
                 <div className={style.title}>
-                <h2>Create your pokemón!</h2>
+                <h2><center>New Pokemon!?</center></h2>
                 </div>
                 <div className={style.containerInput}>
                 <div className={style.containerRight}>
@@ -324,7 +373,10 @@ const CreatePoke = ()=>{
                 )}
             </div>
             <div className={style.containerName}>
-                <h2>{input.name}</h2>
+                <h2><center>{input.name}</center></h2>
+            </div>
+            <div>
+                <h5>{input.hp}</h5>
             </div>
             <div className={style.containerType}>
                 {input.types?.map((e, k) => {

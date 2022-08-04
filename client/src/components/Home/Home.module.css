@@ -1,9 +1,14 @@
 .body{
-    background-color: #fffec2;
+    background-color: #f5f5dc;
 }
 .containterCards{
     width: 100vh;
 }
 .containterCard{
     display: flex;
+}
+.nav{
+    background-color: #656558;
+    height: 70px;
+    margin-bottom: 25px;
 }

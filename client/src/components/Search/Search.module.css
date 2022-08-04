@@ -1,0 +1,22 @@
+.input{
+    position: relative;
+    top: 15px;
+    height: 35px;
+    border-radius: 10px;
+    width: 250px;
+    padding: 3px;
+    border: 1px solid rgb(73, 71, 71);
+    background-color: #ebeac7;
+}
+
+.btn{
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 15px;
+    left: 220px;
+}
+.div{
+    display: flex;
+    justify-content: space-around;
+}

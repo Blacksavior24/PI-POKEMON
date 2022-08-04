@@ -1,9 +1,10 @@
 .filterType {
-	width: 80%;
+	width: 35%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin-left: 10%;
+	margin-left: 30%;
+	margin-right: 30%;
 	flex-wrap: wrap;
 	margin-bottom: 25px;
 	margin-top: 25px;
@@ -23,6 +24,7 @@
 	background-color: white;
 	box-shadow: 0 5px 10px black;
 	transition: all 0.5s;
+	padding: 10px;
 }
 
 .img-filterType:hover {

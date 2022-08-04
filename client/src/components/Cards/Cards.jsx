@@ -9,7 +9,6 @@ const Cards = ({allPokemons})=>{
 
     return(
         <div>
-          <Pagination allPokemons={allPokemons.length} />
               <div className={style.container}>
                 {allPokemons?.map((e, i) => {
                   if (i >= 12 * currentPage && i <= 12 * currentPage + 11) {

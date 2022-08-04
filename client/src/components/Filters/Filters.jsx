@@ -26,12 +26,6 @@ const Filters = ({ setRefreshState }) => {
 
   return (
     <div>
-      <div>
-        <FilterTypes
-          setCurrentPage={setCurrentPage}
-          setRefreshState={setRefreshState}
-        />
-      </div>
       <div className={style.container}>
         <div>
           <button
@@ -96,6 +90,12 @@ const Filters = ({ setRefreshState }) => {
             WEAK
           </button>
         </div>
+      </div>
+      <div>
+        <FilterTypes
+          setCurrentPage={setCurrentPage}
+          setRefreshState={setRefreshState}
+        />
       </div>
     </div>
   );

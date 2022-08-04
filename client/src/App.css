@@ -38,5 +38,12 @@
 }
 
 body{
-  background-color: rgb(13, 13, 39);
+  background-image: url('https://media.vandal.net/m/12-2021/202112310504856_5.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  width: 100%;
+  height: 100%;
 }
